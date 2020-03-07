@@ -17,6 +17,8 @@ import com.google.android.material.tabs.TabLayout;
 import com.thinking.submission5.R;
 import com.thinking.submission5.adapter.SectionsPagerAdapter;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
       tabs.setupWithViewPager(viewPager);
       showMenu = true;
 
-      getSupportActionBar().setElevation(0);
+      Objects.requireNonNull(getSupportActionBar()).setElevation(0);
    }
 
    @Override
@@ -78,12 +80,14 @@ public class MainActivity extends AppCompatActivity {
    public boolean onPrepareOptionsMenu(Menu menu) {
       MenuItem menuFav = menu.findItem(R.id.action_favorite);
       MenuItem menuSet = menu.findItem(R.id.action_change_settings);
-      if(showMenu){
-         menuFav.setVisible(true);
-         menuSet.setVisible(true);
-      }else {
+      MenuItem menuSearch = menu.findItem(R.id.action_search);
+      SearchView searchView = (SearchView) menuSearch.getActionView();
+      if(searchView.isFocusable()){
          menuFav.setVisible(false);
          menuSet.setVisible(false);
+      }else {
+         menuFav.setVisible(true);
+         menuSet.setVisible(true);
       }
       return super.onPrepareOptionsMenu(menu);
    }
