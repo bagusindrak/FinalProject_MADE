@@ -1,3 +1,11 @@
 <resources>
-
+    <string name="app_name">Katalog Film</string>
+    <string name="tab_text_1">Film</string>
+    <string name="tab_text_2">Acara TV</string>
+    <string name="title_movie">Judul Film</string>
+    <string name="description">Deskripsi</string>
+    <string name="overview">Sinopsis</string>
+    <string name="change_language_settings">Ganti Pengaturan Bahasa</string>
+    <string name="image_text">Gambar</string>
+    <string name="favorite">Favorit</string>
 </resources>

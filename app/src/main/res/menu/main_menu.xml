@@ -15,4 +15,6 @@
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_star"
         android:visible="false"/>
+    <item android:visible="true"
+        android:title="Search" />
 </menu>
